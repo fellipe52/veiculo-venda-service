@@ -23,8 +23,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\Veiculo.Application\Cooperativa.Application.csproj" />
-	  <ProjectReference Include="..\..\Veiculo.Infrastructure\Veiculo.Infrastructure.csproj" />
+	  <ProjectReference Include="..\Veiculo.Application\Veiculo.Application.csproj" />
+	  <ProjectReference Include="..\Veiculo.Infrastructure\Veiculo.Infrastructure.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
