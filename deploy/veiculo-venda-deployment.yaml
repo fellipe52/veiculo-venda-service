@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: veiculo-venda
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: veiculo-venda
+  template:
+    metadata:
+      labels:
+        app: veiculo-venda
+    spec:
+      containers:
+        - name: veiculo-venda
+          image: veiculo.azurecr.io/veiculo-venda:latest
+          ports:
+            - containerPort: 80
+          env:
+            - name: ConnectionStrings__DefaultConnection
+              value: "Host=postgres;Database=veiculos_venda;Username=postgres;Password=postgres"
