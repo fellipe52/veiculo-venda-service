@@ -1,44 +1,26 @@
-version: "3.9"
+version: '3.8'
 
 services:
-  cooperativa-api:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: cooperativa-api
-    ports:
-      - "5000:80"
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__DefaultConnection=Host=cooperativa-db;Database=cooperativa;Username=postgres;Password=postgres
-      - RabbitMq__HostName=rabbitmq
-    depends_on:
-      - cooperativa-db
-      - rabbitmq
-
-  cooperativa-db:
+  postgres:
     image: postgres:15
-    container_name: cooperativa-db
-    restart: always
+    container_name: postgres-db
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: cooperativa
+    volumes:
+      - pgdata:/var/lib/postgresql/data
     ports:
       - "5432:5432"
-    volumes:
-      - cooperativa_db_data:/var/lib/postgresql/data
 
-  rabbitmq:
-    image: rabbitmq:3-management
-    container_name: rabbitmq
-    restart: always
-    ports:
-      - "5672:5672"
-      - "15672:15672" 
+  veiculo-venda-api:
+    build:
+      context: ./veiculo-venda
+      dockerfile: Dockerfile
     environment:
-      RABBITMQ_DEFAULT_USER: guest
-      RABBITMQ_DEFAULT_PASS: guest
-
+      - ConnectionStrings__DefaultConnection=Host=postgres;Database=veiculos_venda_db;Username=postgres;Password=postgres
+    depends_on:
+      - postgres
+    ports:
+      - "5001:80"
 volumes:
-  cooperativa_db_data:
+  pgdata:
