@@ -4,7 +4,7 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER $APP_UID
 WORKDIR /app
-EXPOSE 8080
+EXPOSE 8082
 EXPOSE 8081
 
 
@@ -12,31 +12,22 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Pagamento.API/Pagamento.API.csproj", "Pagamento.API/"]
-COPY ["Pagamento.Application/Pagamento.Application.csproj", "Pagamento.Application/"]
-COPY ["Pagamento.Domain/Pagamento.Domain.csproj", "Pagamento.Domain/"]
-COPY ["Pagamento.Infrastructure/Pagamento.Infrastructure.csproj", "Pagamento.Infrastructure/"]
-RUN dotnet restore "Pagamento.API/Pagamento.API.csproj"
-# Restaure as dependências
-RUN dotnet restore "./Pagamento.API/Pagamento.API.csproj"
-
-# Copiar o restante dos arquivos para o contêiner
+COPY ["Veiculo.API/Veiculo.API.csproj", "Veiculo.API/"]
+COPY ["Veiculo.Application/Veiculo.Application.csproj", "Veiculo.Application/"]
+COPY ["Veiculo.Domain/Veiculo.Domain.csproj", "Veiculo.Domain/"]
+COPY ["Veiculo.Infrastructure/Veiculo.Infrastructure.csproj", "Veiculo.Infrastructure/"]
+RUN dotnet restore "Veiculo.API/Veiculo.API.csproj"
 COPY . .
-
-# Verifique os arquivos dentro do contêiner (opcional, para depuração)
-RUN ls -al /src
-
-# Ajuste o diretório de trabalho para o diretório da API e execute o build
-WORKDIR "/src/Pagamento.API"
-RUN dotnet build "./Pagamento.API.csproj" -c $BUILD_CONFIGURATION -o /app/build -v detailed
+WORKDIR "/Veiculo.API"
+RUN dotnet build "./Veiculo.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # Esta fase é usada para publicar o projeto de serviço a ser copiado para a fase final
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./Pagamento.API.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./Veiculo.API.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 # Esta fase é usada na produção ou quando executada no VS no modo normal (padrão quando não está usando a configuração de Depuração)
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Pagamento.API.dll"]
+ENTRYPOINT ["dotnet", "Veiculo.API.dll"]
