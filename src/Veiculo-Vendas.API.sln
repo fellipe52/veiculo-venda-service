@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veiculo.Domain", "Veiculo.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veiculo.Infrastructure", "Veiculo.Infrastructure\Veiculo.Infrastructure.csproj", "{A4231998-C27C-C337-4B73-9795CF20191E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PagamentoTest", "PagamentoTest\PagamentoTest.csproj", "{8DF19F43-5876-43F1-A69B-A91A5F17FE44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{A4231998-C27C-C337-4B73-9795CF20191E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4231998-C27C-C337-4B73-9795CF20191E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4231998-C27C-C337-4B73-9795CF20191E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DF19F43-5876-43F1-A69B-A91A5F17FE44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DF19F43-5876-43F1-A69B-A91A5F17FE44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DF19F43-5876-43F1-A69B-A91A5F17FE44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DF19F43-5876-43F1-A69B-A91A5F17FE44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +58,7 @@ Global
 		{B7DEB830-6B73-8098-41BC-9613AF1770B2} = {C3195B9D-B5B0-4C0E-9C84-8AD05F254543}
 		{A5938716-6110-5E15-1563-43E5E8403784} = {9BC7816F-692B-4C70-86E8-47DD98129766}
 		{A4231998-C27C-C337-4B73-9795CF20191E} = {9FACB30E-C5F1-4E4C-BE5B-FA3B8835EC34}
+		{8DF19F43-5876-43F1-A69B-A91A5F17FE44} = {E7788098-A2EE-4233-B20B-819B293EA0A2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {47EA60FC-8E23-45F3-8AD2-EF0B6361B747}

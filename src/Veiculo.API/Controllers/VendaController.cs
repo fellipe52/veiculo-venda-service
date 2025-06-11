@@ -22,12 +22,12 @@ namespace Veiculo.API.Controllers
             _logger = logger;
         }
 
-        [HttpPost("PorVeiculo")]
+        [HttpPost("ComprarVeiculo")]
         [ProducesResponseType(typeof(Guid), (int)HttpStatusCode.Created)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> AdicionarVeiculoAVenda([FromBody] VendaDTORequest request)
         {
-            var id = await _vendaApplicaton.AdicionarVeiculoAVendaApplicationAsync(request);
+            var id = await _vendaApplicaton.ComprarVeiculoAsyncApplicationAsync(request);
 
             return Ok(id);
         }

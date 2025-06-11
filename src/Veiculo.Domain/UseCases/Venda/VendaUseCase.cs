@@ -1,34 +1,57 @@
-﻿using System.Xml;
+﻿using Domain.Contracts;
 using Domain.DTOs;
-using Domain.Entities;
 using Domain.Interfaces.Repository;
 using Domain.Interfaces.UseCase.Venda;
+using Veiculo.Domain.Interfaces.Service;
 
 namespace Domain.UseCases.Venda;
 public class VendaUseCase : IVendaUseCase
 {
     private readonly IVendaRepository _repository;
+    private readonly IPagamentoService _service;
 
-    public VendaUseCase(IVendaRepository repository) 
+    public VendaUseCase(IVendaRepository repository, IPagamentoService service) 
     {
         _repository = repository;
+        _service = service;
     }
 
-    public async Task<Guid> AdicionarVeiculoAVendaAsync(VendaDTORequest vendaDTORequest)
+    public async Task<Guid> ComprarVeiculoAsync(VendaDTORequest request)
     {
-        Domain.Entities.Venda vendaRequest = new Domain.Entities.Venda();
+        Domain.Entities.Venda vendaRequest = new Domain.Entities.Venda()
+        {
+            VeiculoId = request.VeiculoId,
+            CpfComprador = request.CpfComprador,
+            DataVenda = DateTime.Now,
+            CodigoPagamento = request.CodigoPagamento,
+            StatusPagamento = request.StatusPagamento
+        };
 
-        vendaRequest.DataVenda = vendaDTORequest.DataVenda;
-        vendaRequest.VeiculoId = vendaDTORequest.VeiculoId;
-        vendaRequest.CpfComprador = vendaDTORequest.CpfComprador;
-        vendaRequest.DataVenda = vendaDTORequest.DataVenda;
-        vendaRequest.CodigoPagamento = vendaDTORequest.CodigoPagamento;
-        vendaRequest.StatusPagamento = vendaDTORequest.StatusPagamento;
+        var transacaoRequest = new TransactionsRquest
+        {
+            TipoTransacao = request.TipoTransacao,
+            Valor = request.Valor,
+            NumeroParcelas = request.NumeroParcelas,
+            NomeImpressoCartao = request.NomeImpressoCartao,
+            NumeroCartao = request.NumeroCartao,
+            MesVencimentoCartao = request.MesVencimentoCartao,
+            AnoVencimentoCartao = request.AnoVencimentoCartao,
+            CodigoSegurancaCartao = request.CodigoSegurancaCartao,
+            CategoriaTransacao = request.CategoriaTransacao
+        };
+
+        var transacaoResponse = await _service.CriarTransacaoAsync(transacaoRequest);
+
+        if(transacaoResponse.CodigoRetorno == "-1")
+        {
+            return Guid.Empty;
+        }
 
         var response = await _repository.AdicionarVendaAsync(vendaRequest);
 
         return response;
     }
+
 
     public async Task<VendaDTOResponse> ObterVendaPorIdAsync(Guid vendaId)
     {

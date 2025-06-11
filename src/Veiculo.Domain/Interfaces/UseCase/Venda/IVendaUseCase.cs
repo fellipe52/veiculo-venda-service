@@ -4,7 +4,7 @@ namespace Domain.Interfaces.UseCase.Venda
 {
     public interface IVendaUseCase
     {
-        public Task<Guid> AdicionarVeiculoAVendaAsync(VendaDTORequest vendaDTORequest);
+        public Task<Guid> ComprarVeiculoAsync(VendaDTORequest vendaDTORequest);
 
         public Task<VendaDTOResponse> ObterVendaPorIdAsync(Guid vendaId);
 

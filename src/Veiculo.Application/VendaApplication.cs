@@ -13,9 +13,9 @@ namespace Veiculo.Application
             _vendaUseCase = vendaUseCase;
         }
 
-        public async Task<Guid> AdicionarVeiculoAVendaApplicationAsync(VendaDTORequest vendaDTORequest)
+        public async Task<Guid> ComprarVeiculoAsyncApplicationAsync(VendaDTORequest vendaDTORequest)
         {
-            return await _vendaUseCase.AdicionarVeiculoAVendaAsync(vendaDTORequest);
+            return await _vendaUseCase.ComprarVeiculoAsync(vendaDTORequest);
         }
 
         public async Task AtualizarStatusVendaApplicationAsync(AtualizarVendaDTORequest request)

@@ -1,0 +1,43 @@
+name: Build, Push and Deploy to AKS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-push-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Azure Login via Service Principal
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Set AKS context
+      uses: azure/aks-set-context@v3
+      with:
+        resource-group: veiculo
+        cluster-name: veiculo
+
+    - name: Login to Azure Container Registry (ACR)
+      run: |
+        az acr login --name veiculo
+
+    - name: Build Docker image
+      run: |
+        docker build -t veiculo.azurecr.io/venda-veiculo:latest -f src/Dockerfile src
+
+    - name: Push Docker image to ACR
+      run: |
+        docker push veiculo.azurecr.io/venda-veiculo:latest
+
+    - name: Deploy to AKS
+      run: |
+        kubectl apply -f deploy/veiculo-venda-secrets.yml
+        kubectl apply -f deploy/veiculo-venda-deployment.yaml
+        kubectl apply -f deploy/veiculo-venda-service.yml

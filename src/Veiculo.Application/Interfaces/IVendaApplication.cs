@@ -4,7 +4,7 @@ namespace Application.Interfaces
 {
     public interface IVendaApplication
     {
-        public Task<Guid> AdicionarVeiculoAVendaApplicationAsync(VendaDTORequest vendaDTORequest);
+        public Task<Guid> ComprarVeiculoAsyncApplicationAsync(VendaDTORequest vendaDTORequest);
 
         public Task<VendaDTOResponse> ObterVendaPorIdApplicationAsync(Guid vendaId);
 

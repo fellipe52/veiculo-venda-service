@@ -1,12 +1,196 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\fiap\\Fase 4\\veiculo-venda-service\\src\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8DF19F43-5876-43F1-A69B-A91A5F17FE44}|PagamentoTest\\PagamentoTest.csproj|c:\\fiap\\fase 4\\veiculo-venda-service\\src\\pagamentotest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DF19F43-5876-43F1-A69B-A91A5F17FE44}|PagamentoTest\\PagamentoTest.csproj|solutionrelative:pagamentotest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86B986C4-A2E7-D6CE-20A9-621AEE67ADD1}|Veiculo.API\\Veiculo.API.csproj|c:\\fiap\\fase 4\\veiculo-venda-service\\src\\veiculo.api\\controllers\\vendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86B986C4-A2E7-D6CE-20A9-621AEE67ADD1}|Veiculo.API\\Veiculo.API.csproj|solutionrelative:veiculo.api\\controllers\\vendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86B986C4-A2E7-D6CE-20A9-621AEE67ADD1}|Veiculo.API\\Veiculo.API.csproj|c:\\fiap\\fase 4\\veiculo-venda-service\\src\\veiculo.api\\extensions\\infrastructureextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86B986C4-A2E7-D6CE-20A9-621AEE67ADD1}|Veiculo.API\\Veiculo.API.csproj|solutionrelative:veiculo.api\\extensions\\infrastructureextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86B986C4-A2E7-D6CE-20A9-621AEE67ADD1}|Veiculo.API\\Veiculo.API.csproj|c:\\fiap\\fase 4\\veiculo-venda-service\\src\\veiculo.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86B986C4-A2E7-D6CE-20A9-621AEE67ADD1}|Veiculo.API\\Veiculo.API.csproj|solutionrelative:veiculo.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5938716-6110-5E15-1563-43E5E8403784}|Veiculo.Domain\\Veiculo.Domain.csproj|c:\\fiap\\fase 4\\veiculo-venda-service\\src\\veiculo.domain\\enums\\statusvenda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5938716-6110-5E15-1563-43E5E8403784}|Veiculo.Domain\\Veiculo.Domain.csproj|solutionrelative:veiculo.domain\\enums\\statusvenda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5938716-6110-5E15-1563-43E5E8403784}|Veiculo.Domain\\Veiculo.Domain.csproj|c:\\fiap\\fase 4\\veiculo-venda-service\\src\\veiculo.domain\\enums\\statusveiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5938716-6110-5E15-1563-43E5E8403784}|Veiculo.Domain\\Veiculo.Domain.csproj|solutionrelative:veiculo.domain\\enums\\statusveiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5938716-6110-5E15-1563-43E5E8403784}|Veiculo.Domain\\Veiculo.Domain.csproj|c:\\fiap\\fase 4\\veiculo-venda-service\\src\\veiculo.domain\\dtos\\veiculodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5938716-6110-5E15-1563-43E5E8403784}|Veiculo.Domain\\Veiculo.Domain.csproj|solutionrelative:veiculo.domain\\dtos\\veiculodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4231998-C27C-C337-4B73-9795CF20191E}|Veiculo.Infrastructure\\Veiculo.Infrastructure.csproj|c:\\fiap\\fase 4\\veiculo-venda-service\\src\\veiculo.infrastructure\\service\\pagamentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4231998-C27C-C337-4B73-9795CF20191E}|Veiculo.Infrastructure\\Veiculo.Infrastructure.csproj|solutionrelative:veiculo.infrastructure\\service\\pagamentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4231998-C27C-C337-4B73-9795CF20191E}|Veiculo.Infrastructure\\Veiculo.Infrastructure.csproj|c:\\fiap\\fase 4\\veiculo-venda-service\\src\\veiculo.infrastructure\\veiculo.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A4231998-C27C-C337-4B73-9795CF20191E}|Veiculo.Infrastructure\\Veiculo.Infrastructure.csproj|solutionrelative:veiculo.infrastructure\\veiculo.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5938716-6110-5E15-1563-43E5E8403784}|Veiculo.Domain\\Veiculo.Domain.csproj|c:\\fiap\\fase 4\\veiculo-venda-service\\src\\veiculo.domain\\interfaces\\service\\ipagamentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5938716-6110-5E15-1563-43E5E8403784}|Veiculo.Domain\\Veiculo.Domain.csproj|solutionrelative:veiculo.domain\\interfaces\\service\\ipagamentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4231998-C27C-C337-4B73-9795CF20191E}|Veiculo.Infrastructure\\Veiculo.Infrastructure.csproj|c:\\fiap\\fase 4\\veiculo-venda-service\\src\\veiculo.infrastructure\\repository\\veiculorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4231998-C27C-C337-4B73-9795CF20191E}|Veiculo.Infrastructure\\Veiculo.Infrastructure.csproj|solutionrelative:veiculo.infrastructure\\repository\\veiculorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\fiap\\Fase 4\\veiculo-venda-service\\src\\PagamentoTest\\Program.cs",
+              "RelativeDocumentMoniker": "PagamentoTest\\Program.cs",
+              "ToolTip": "C:\\fiap\\Fase 4\\veiculo-venda-service\\src\\PagamentoTest\\Program.cs",
+              "RelativeToolTip": "PagamentoTest\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T15:46:47.533Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "VendaController.cs",
+              "DocumentMoniker": "C:\\fiap\\Fase 4\\veiculo-venda-service\\src\\Veiculo.API\\Controllers\\VendaController.cs",
+              "RelativeDocumentMoniker": "Veiculo.API\\Controllers\\VendaController.cs",
+              "ToolTip": "C:\\fiap\\Fase 4\\veiculo-venda-service\\src\\Veiculo.API\\Controllers\\VendaController.cs",
+              "RelativeToolTip": "Veiculo.API\\Controllers\\VendaController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAEwBgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T13:51:02.329Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "InfrastructureExtension.cs",
+              "DocumentMoniker": "C:\\fiap\\Fase 4\\veiculo-venda-service\\src\\Veiculo.API\\Extensions\\InfrastructureExtension.cs",
+              "RelativeDocumentMoniker": "Veiculo.API\\Extensions\\InfrastructureExtension.cs",
+              "ToolTip": "C:\\fiap\\Fase 4\\veiculo-venda-service\\src\\Veiculo.API\\Extensions\\InfrastructureExtension.cs",
+              "RelativeToolTip": "Veiculo.API\\Extensions\\InfrastructureExtension.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T13:46:40.481Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\fiap\\Fase 4\\veiculo-venda-service\\src\\Veiculo.API\\Program.cs",
+              "RelativeDocumentMoniker": "Veiculo.API\\Program.cs",
+              "ToolTip": "C:\\fiap\\Fase 4\\veiculo-venda-service\\src\\Veiculo.API\\Program.cs",
+              "RelativeToolTip": "Veiculo.API\\Program.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAwwEIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T13:12:50.141Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StatusVenda.cs",
+              "DocumentMoniker": "C:\\fiap\\Fase 4\\veiculo-venda-service\\src\\Veiculo.Domain\\Enums\\StatusVenda.cs",
+              "RelativeDocumentMoniker": "Veiculo.Domain\\Enums\\StatusVenda.cs",
+              "ToolTip": "C:\\fiap\\Fase 4\\veiculo-venda-service\\src\\Veiculo.Domain\\Enums\\StatusVenda.cs",
+              "RelativeToolTip": "Veiculo.Domain\\Enums\\StatusVenda.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T13:10:47.442Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "VeiculoDTO.cs",
+              "DocumentMoniker": "C:\\fiap\\Fase 4\\veiculo-venda-service\\src\\Veiculo.Domain\\DTOs\\VeiculoDTO.cs",
+              "RelativeDocumentMoniker": "Veiculo.Domain\\DTOs\\VeiculoDTO.cs",
+              "ToolTip": "C:\\fiap\\Fase 4\\veiculo-venda-service\\src\\Veiculo.Domain\\DTOs\\VeiculoDTO.cs",
+              "RelativeToolTip": "Veiculo.Domain\\DTOs\\VeiculoDTO.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAIA9wBMAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T13:10:31.315Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "StatusVeiculo.cs",
+              "DocumentMoniker": "C:\\fiap\\Fase 4\\veiculo-venda-service\\src\\Veiculo.Domain\\Enums\\StatusVeiculo.cs",
+              "RelativeDocumentMoniker": "Veiculo.Domain\\Enums\\StatusVeiculo.cs",
+              "ToolTip": "C:\\fiap\\Fase 4\\veiculo-venda-service\\src\\Veiculo.Domain\\Enums\\StatusVeiculo.cs",
+              "RelativeToolTip": "Veiculo.Domain\\Enums\\StatusVeiculo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T13:09:30.919Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IPagamentoService.cs",
+              "DocumentMoniker": "C:\\fiap\\Fase 4\\veiculo-venda-service\\src\\Veiculo.Domain\\Interfaces\\Service\\IPagamentoService.cs",
+              "RelativeDocumentMoniker": "Veiculo.Domain\\Interfaces\\Service\\IPagamentoService.cs",
+              "ToolTip": "C:\\fiap\\Fase 4\\veiculo-venda-service\\src\\Veiculo.Domain\\Interfaces\\Service\\IPagamentoService.cs",
+              "RelativeToolTip": "Veiculo.Domain\\Interfaces\\Service\\IPagamentoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T02:33:21.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "VeiculoRepository.cs",
+              "DocumentMoniker": "C:\\fiap\\Fase 4\\veiculo-venda-service\\src\\Veiculo.Infrastructure\\Repository\\VeiculoRepository.cs",
+              "RelativeDocumentMoniker": "Veiculo.Infrastructure\\Repository\\VeiculoRepository.cs",
+              "ToolTip": "C:\\fiap\\Fase 4\\veiculo-venda-service\\src\\Veiculo.Infrastructure\\Repository\\VeiculoRepository.cs",
+              "RelativeToolTip": "Veiculo.Infrastructure\\Repository\\VeiculoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T02:32:55.549Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PagamentoService.cs",
+              "DocumentMoniker": "C:\\fiap\\Fase 4\\veiculo-venda-service\\src\\Veiculo.Infrastructure\\Service\\PagamentoService.cs",
+              "RelativeDocumentMoniker": "Veiculo.Infrastructure\\Service\\PagamentoService.cs",
+              "ToolTip": "C:\\fiap\\Fase 4\\veiculo-venda-service\\src\\Veiculo.Infrastructure\\Service\\PagamentoService.cs",
+              "RelativeToolTip": "Veiculo.Infrastructure\\Service\\PagamentoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T02:32:38.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Veiculo.Infrastructure.csproj",
+              "DocumentMoniker": "C:\\fiap\\Fase 4\\veiculo-venda-service\\src\\Veiculo.Infrastructure\\Veiculo.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "Veiculo.Infrastructure\\Veiculo.Infrastructure.csproj",
+              "ToolTip": "C:\\fiap\\Fase 4\\veiculo-venda-service\\src\\Veiculo.Infrastructure\\Veiculo.Infrastructure.csproj",
+              "RelativeToolTip": "Veiculo.Infrastructure\\Veiculo.Infrastructure.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-07T02:32:09.441Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
