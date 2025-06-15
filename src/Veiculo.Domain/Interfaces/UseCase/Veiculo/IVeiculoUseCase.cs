@@ -20,7 +20,7 @@ namespace Domain.Interfaces.UseCase.Veiculo
 
         public Task<VeiculoDTOResponse> ObterVeiculoPorCorAsync(string cor);
 
-        public Task<VeiculoDTOResponse> ObterVeiculoPorPrecoAsync(decimal preco);
+        public Task<List<VeiculoDTOResponse>> ObterVeiculoPorPrecoAsync(decimal preco);
 
         public Task DeleteVeiculoAsync(Domain.Entities.Veiculo veiculo);
 

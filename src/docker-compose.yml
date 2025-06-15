@@ -1,0 +1,51 @@
+version: "3.9"
+
+services:
+  veiculo-venda-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: veiculo-venda-api
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=server=veiculo-db;port=3306;database=veiculo_venda;user=appuser;password=appsenha
+    depends_on:
+      - veiculo-db
+    networks:
+      - veiculo-network
+
+  veiculo-db:
+    image: mysql:8.0
+    container_name: veiculo-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: veiculo_venda
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: appsenha
+    ports:
+      - "3306:3306"
+    volumes:
+      - veiculo_db_data:/var/lib/mysql
+    networks:
+      - veiculo-network
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - "5050:8080"
+    depends_on:
+      - veiculo-db
+    networks:
+      - veiculo-network
+
+networks:
+  veiculo-network:
+    driver: bridge
+
+volumes:
+  veiculo_db_data:

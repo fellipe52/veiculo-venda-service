@@ -12,15 +12,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-
-    - name: Verificar se AZURE_CREDENTIALS está acessível
-      run: |
-        if [ -z "${{ secrets.AZURE_CREDENTIALS }}" ]; then
-          echo "❌ Secret AZURE_CREDENTIALS está vazia ou não existe."
-          exit 1
-        else
-          echo "✅ Secret AZURE_CREDENTIALS está presente com conteúdo."
-        fi
         
     - name: Azure Login via Service Principal
       uses: azure/login@v1

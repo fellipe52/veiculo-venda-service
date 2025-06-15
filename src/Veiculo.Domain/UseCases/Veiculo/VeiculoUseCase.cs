@@ -1,4 +1,5 @@
-﻿using Domain.DTOs;
+﻿using System.Linq;
+using Domain.DTOs;
 using Domain.Enums;
 using Domain.Interfaces.Repository;
 using Domain.Interfaces.UseCase.Veiculo;
@@ -32,9 +33,10 @@ namespace Domain.UseCases.Venda
         public async Task AtualizarVeiculoAsync(AtualizarVeiculoDTORequest request)
         {
             Entities.Veiculo veiculo = new Entities.Veiculo();
-           
+
+
             var existeVeiculo = await _repository.ObterVeiculoPorIdAsync(request.Id);
-            
+
             if (existeVeiculo == null) { return; }
 
             veiculo.Marca = request.Marca;
@@ -165,21 +167,22 @@ namespace Domain.UseCases.Venda
             return response;
         }
 
-        public async Task<VeiculoDTOResponse> ObterVeiculoPorPrecoAsync(decimal preco)
+        public async Task<List<VeiculoDTOResponse>> ObterVeiculoPorPrecoAsync(decimal preco)
         {
-            VeiculoDTOResponse response = new VeiculoDTOResponse();
-
             var result = await _repository.ObterVeiculoPorPrecoAsync(preco);
 
-            response.Id = result.Id;
-            response.Marca = result.Marca;
-            response.Modelo = result.Modelo;
-            response.Ano = result.Ano;
-            response.Cor = result.Cor;
-            response.Preco = result.Preco;
-            response.Status = result.Status;
-            response.DataCadastro = result.DataCadastro;
-            response.Ativo = result.Ativo;
+            var response = result.Select(v => new VeiculoDTOResponse
+            {
+                Id = v.Id,
+                Marca = v.Marca,
+                Modelo = v.Modelo,
+                Ano = v.Ano,
+                Cor = v.Cor,
+                Preco = v.Preco,
+                Status = v.Status,
+                DataCadastro = v.DataCadastro,
+                Ativo = v.Ativo,
+            }).ToList();
 
             return response;
         }
@@ -235,4 +238,4 @@ namespace Domain.UseCases.Venda
             return response;
         }
     }
-}
+}   

@@ -52,7 +52,7 @@ namespace Application
             return await _veiculoUseCase.ObterVeiculoPorModeloAsync(modelo);
         }
 
-        public async Task<VeiculoDTOResponse> ObterVeiculoPorPrecoApplicationAsync(decimal preco)
+        public async Task<List<VeiculoDTOResponse>> ObterVeiculoPorPrecoApplicationAsync(decimal preco)
         {
             return await _veiculoUseCase.ObterVeiculoPorPrecoAsync(preco);
         }

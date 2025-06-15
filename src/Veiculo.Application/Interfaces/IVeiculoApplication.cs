@@ -20,8 +20,7 @@ namespace Application.Interfaces
 
         public Task<VeiculoDTOResponse> ObterVeiculoPorCorApplicationAsync(string cor);
 
-        public Task<VeiculoDTOResponse> ObterVeiculoPorPrecoApplicationAsync(decimal preco);
-
+        public Task<List<VeiculoDTOResponse>> ObterVeiculoPorPrecoApplicationAsync(decimal preco);
         public Task DeleteVeiculoApplicationAsync(Domain.Entities.Veiculo veiculo);
 
         public Task<List<VeiculoDTOResponse>> ObterVeiculosDisponiveisOrdenadosApplicationAsync();

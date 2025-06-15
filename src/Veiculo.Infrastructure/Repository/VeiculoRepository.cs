@@ -63,10 +63,12 @@ namespace Infrastructure.Repository
                 .FirstOrDefaultAsync(v => v.Cor == cor && v.Status == StatusVeiculo.Disponivel && v.Ativo == true);
         }
 
-        public async Task<Domain.Entities.Veiculo> ObterVeiculoPorPrecoAsync(decimal preco)
+        public async Task<List<Domain.Entities.Veiculo>> ObterVeiculoPorPrecoAsync(decimal preco)
         {
             return await _context.Veiculos
-                .FirstOrDefaultAsync(v => v.Preco == preco && v.Status == StatusVeiculo.Disponivel && v.Ativo == true);
+                .Where(v => v.Preco == preco && v.Status == StatusVeiculo.Disponivel && v.Ativo == true)
+                .OrderBy(v => v.Preco)
+                .ToListAsync();
         }
 
         public async Task DeleteVeiculoAsync(Domain.Entities.Veiculo veiculo)

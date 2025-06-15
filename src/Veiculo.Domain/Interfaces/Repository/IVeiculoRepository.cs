@@ -19,8 +19,7 @@ namespace Domain.Interfaces.Repository
         public Task<Domain.Entities.Veiculo> ObterVeiculoPorAnoAsync(int ano);
 
         public Task<Domain.Entities.Veiculo> ObterVeiculoPorCorAsync(string cor);
-
-        public Task<Domain.Entities.Veiculo> ObterVeiculoPorPrecoAsync(decimal preco);
+        public Task<List<Domain.Entities.Veiculo>> ObterVeiculoPorPrecoAsync(decimal preco);
 
         public Task DeleteVeiculoAsync(Domain.Entities.Veiculo veiculo);
 

@@ -7,7 +7,6 @@ using Domain.DTOs;
 namespace Veiculo.API.Controllers
 {
     [ApiController]
-    [Authorize()]
     [Route("[controller]")]
     public class VendaController : ControllerBase
     {

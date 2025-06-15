@@ -24,6 +24,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Veiculo.Application\Veiculo.Application.csproj" />
+	  <ProjectReference Include="..\Veiculo.Domain\Veiculo.Domain.csproj" />
 	  <ProjectReference Include="..\Veiculo.Infrastructure\Veiculo.Infrastructure.csproj" />
 	</ItemGroup>
 
