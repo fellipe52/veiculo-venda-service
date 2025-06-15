@@ -17,6 +17,7 @@ API RESTful para efetuação de vendas de veiculo, Cooperados e seus cadastros d
     Pasta src -> docker-compose up -d
 
 #  Deploy
+    #  Deploy
     Criar perfil Git:
     
     az ad sp create-for-rbac --name "my-github-actions" --role contributor --scopes /subscriptions/{sua-subscription}/resourceGroups/veiculo --query "{client_id: appId, client_secret: password, tenant_id: tenant}"
@@ -24,3 +25,9 @@ API RESTful para efetuação de vendas de veiculo, Cooperados e seus cadastros d
     Variáveis Git:
     
     AZURE_CREDENTIALS
+
+    Deployment:
+    deploy -> Contém arquivos deployment, service e secrets
+
+    WorkFlows:
+    .github/workflows -> Contém arquivos build .net e execução dos arquivos de deploy no azure cloud.
