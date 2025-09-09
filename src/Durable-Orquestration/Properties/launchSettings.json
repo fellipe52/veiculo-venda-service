@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Durable_Orquestration": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7183",
+      "launchBrowser": false
+    }
+  }
+}

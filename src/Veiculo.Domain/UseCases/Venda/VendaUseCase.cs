@@ -22,33 +22,13 @@ public class VendaUseCase : IVendaUseCase
         Domain.Entities.Venda vendaRequest = new Domain.Entities.Venda()
         {
             VeiculoId = request.VeiculoId,
-            CpfComprador = request.CpfComprador,
+            ClienteId = request.ClienteId,
             DataVenda = DateTime.Now,
             CodigoPagamento = request.CodigoPagamento,
             StatusPagamento = request.StatusPagamento
         };
 
-        var transacaoRequest = new TransactionsRquest
-        {
-            TipoTransacao = request.TipoTransacao,
-            Valor = request.Valor,
-            NumeroParcelas = request.NumeroParcelas,
-            NomeImpressoCartao = request.NomeImpressoCartao,
-            NumeroCartao = request.NumeroCartao,
-            MesVencimentoCartao = request.MesVencimentoCartao,
-            AnoVencimentoCartao = request.AnoVencimentoCartao,
-            CodigoSegurancaCartao = request.CodigoSegurancaCartao,
-            CategoriaTransacao = request.CategoriaTransacao
-        };
-
-        var transacaoResponse = await _service.CriarTransacaoAsync(transacaoRequest);
-
-        if(transacaoResponse.CodigoRetorno == "-1")
-        {
-            return Guid.Empty;
-        }
-
-        //var response = await _repository.AdicionarVendaAsync(vendaRequest);
+        var response = await _repository.AdicionarVendaAsync(vendaRequest);
 
         return Guid.Parse("1d5d20eb-c714-4adb-823f-7d78524c0534");
     }
