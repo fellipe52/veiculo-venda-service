@@ -23,15 +23,12 @@ namespace VeiculoVenda.Orchestration
             {
                 var request = context.GetInput<VendaRequest>();
 
-                // 1. Criar/validar cliente
                 var clienteId = await context.CallActivityAsync<string>(
                     nameof(AtividadeCriarCliente), request.Cliente);
 
-                // 2. Reservar veículo
                 var reservaId = await context.CallActivityAsync<string>(
                     nameof(AtividadeReservarVeiculo), request.VeiculoId);
 
-                // 3. Processar pagamento
                 var pagamentoId = await context.CallActivityAsync<string>(
                     nameof(AtividadeProcessarPagamento), new { ClienteId = clienteId, VeiculoId = request.VeiculoId });
 
@@ -42,9 +39,7 @@ namespace VeiculoVenda.Orchestration
             {
                 logger.LogError(ex, "Erro no fluxo de venda, iniciando compensação...");
 
-                // Compensações
-                await context.CallActivityAsync(nameof(AtividadeCancelarReserva), null);
-                await context.CallActivityAsync(nameof(AtividadeEstornarPagamento), null);
+                await context.CallActivityAsync(nameof(AtividadeCancelarPagamento), null);
 
                 throw;
             }
@@ -134,15 +129,15 @@ namespace VeiculoVenda.Orchestration
         }
 
 
-        [Function(nameof(AtividadeCancelarReserva))]
-        public static async Task AtividadeCancelarReserva([ActivityTrigger] object _, FunctionContext context)
+        [Function(nameof(AtividadeCancelarPagamento))]
+        public static async Task AtividadeCancelarPagamento([ActivityTrigger] CancelarTransacaoDTO cancelarTransacaoDTO, FunctionContext context)
         {
-            var logger = context.GetLogger(nameof(AtividadeCancelarReserva));
+            var logger = context.GetLogger(nameof(AtividadeCancelarPagamento));
             var httpClientFactory = context.InstanceServices.GetRequiredService<IHttpClientFactory>();
             var client = httpClientFactory.CreateClient();
 
             logger.LogWarning("Cancelando reserva do veículo...");
-            await client.PostAsync("http://veiculo-venda-api/api/veiculos/cancelar-reserva", null);
+            await client.PostAsJsonAsync("http://pagamento-service/api/pagamento/Cancelar/Transacao", cancelarTransacaoDTO);
         }
 
         [Function(nameof(AtividadeEstornarPagamento))]
@@ -159,4 +154,17 @@ namespace VeiculoVenda.Orchestration
 
     public record VendaRequest(string VeiculoId, ClienteDto Cliente);
     public record ClienteDto(string Nome, string Documento, string Email);
+
+    public class CancelarTransacaoDTO
+    {
+        public string Tid { get; set; }
+        public int Amount { get; set; }
+        public List<URL> Urls { get; set; }
+    }
+
+    public class URL
+    {
+        public string Kind { get; set; }
+        public string Url { get; set; }
+    }
 }
